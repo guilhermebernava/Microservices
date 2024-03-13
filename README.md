@@ -1,29 +1,31 @@
-# 🚀 Projeto Microserviço Genérico em .NET 8
+# 🚀 Generic Microservice Project in .NET 8
 
-Bem-vindo ao Projeto Microserviço Genérico! Este é um projeto desenvolvido em .NET 8 que implementa diversos padrões e tecnologias populares para construção de microserviços robustos e escaláveis.
+Welcome to the Generic Microservice Project! This is a project developed in .NET 8 that implements various patterns and popular technologies for building robust and scalable microservices.
 
-## 🛠️ Funcionalidades e Tecnologias
+## 🛠️ Features and Technologies
 
-- **Entity Framework**: Utilizado para mapeamento objeto-relacional (ORM) e interação com o banco de dados SQL Server.
-- **SQL Server**: Banco de dados relacional utilizado para armazenar os dados.
-- **Repository Pattern**: Padrão utilizado para abstrair e isolar o acesso aos dados.
-- **Clean Architecture**: Arquitetura de software que promove a separação de preocupações e a independência de frameworks.
-- **Unity of Work**: Padrão utilizado para gerenciar transações e ações em um conjunto de repositórios.
-- **Fluent Validator**: Biblioteca utilizada para validação de modelos de forma fluente.
-- **Autenticação JWT**: Mecanismo de autenticação baseado em tokens JWT (JSON Web Tokens).
-- **Swagger**: Ferramenta para documentação e teste de APIs.
-- **Services Pattern**: Padrão utilizado para abstrair a lógica de negócios em serviços independentes.
+- **Entity Framework**: Used for object-relational mapping (ORM) and interaction with SQL Server database.
+- **SQL Server**: Relational database used for storing data.
+- **Repository Pattern**: Pattern used to abstract and isolate data access.
+- **Clean Architecture**: Software architecture that promotes separation of concerns and framework independence.
+- **Unity of Work**: Pattern used to manage transactions and actions across a set of repositories.
+- **Fluent Validator**: Library used for fluent model validation.
+- **JWT Authentication**: Authentication mechanism based on JSON Web Tokens.
+- **Swagger**: Tool for API documentation and testing.
+- **Services Pattern**: Pattern used to abstract business logic into independent services.
 
-## ⚙️ Configuração e Execução
+## ⚙️ Configuration and Execution
 
-1. **Pré-requisitos**: Certifique-se de ter o .NET 8 SDK instalado em sua máquina. Além disso, é necessário ter acesso a um servidor SQL Server.
+1. **Prerequisites**: Make sure you have the .NET 8 SDK installed on your machine. Additionally, you need access to a SQL Server database.
+   
+2. **Database Configuration**: Execute the provided SQL scripts in the `Scripts` folder to set up the database and necessary tables.
+   
+3. **Project Configuration**: Open the project in your preferred IDE and adjust the database connection settings in the `appsettings.json` file.
+   
+4. **Running the Project**: Compile and execute the project. Ensure that all dependencies are installed correctly.
 
-2. **Configuração do Banco de Dados**: Execute os scripts SQL fornecidos na pasta `Scripts` para configurar o banco de dados e as tabelas necessárias.
+## 📚 API Documentation
 
-3. **Configuração do Projeto**: Abra o projeto em sua IDE preferida e ajuste as configurações de conexão com o banco de dados no arquivo `appsettings.json`.
+The API documentation is available through Swagger. To access it, run the project and open the following URL in your browser:
 
-4. **Execução do Projeto**: Compile e execute o projeto. Certifique-se de que todas as dependências foram instaladas corretamente.
-
-## 📚 Documentação da API
-
-A documentação da API está disponível através do Swagger. Para acessá-la, execute o projeto e abra o seguinte URL em seu navegador:
+http://localhost:{port}/swagger
