@@ -1,5 +1,8 @@
-﻿using Microservices.Infra.Data;
+﻿using Microservices.Domain.Entities;
+using Microservices.Domain.Repositories;
+using Microservices.Infra.Data;
 using Microservices.Infra.Exceptions;
+using Microservices.Infra.Repositories;
 using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Microservices.Infra.UnityOfWok;
@@ -7,21 +10,26 @@ public class UnityOfWork : IUnityOfWork, IDisposable
 {
     private AppDbContext _db { get; }
     private IDbContextTransaction _transaction;
-    //private IRepository<Entity> EntityRepository { get; }
+    private IRepository<Recomendation> _recomendationRepository;
 
     public UnityOfWork(AppDbContext db)
     {
         _db = db;
     }
 
-    //public IRepository<Entity> EntityRepository
-    //{
-    //    get
-    //    {
-    //        if(EntityRepository == null) EntityRepository = new Repository<Entity>(db);
-    //        return EntityRepository;
-    //    }
-    //}
+    public IRepository<Recomendation> RecomendationRepository
+    {
+        get
+        {
+            if (_recomendationRepository == null)
+                _recomendationRepository = new Repository<Recomendation>(_db);
+            return _recomendationRepository;
+        }
+        set
+        {
+            _recomendationRepository = value;
+        }
+    }
 
     public async Task BeginTransactionAsync() => _transaction = await _db.Database.BeginTransactionAsync();
     

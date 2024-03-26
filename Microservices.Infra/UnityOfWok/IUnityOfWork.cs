@@ -1,7 +1,10 @@
-﻿namespace Microservices.Infra.UnityOfWok;
+﻿using Microservices.Domain.Entities;
+using Microservices.Domain.Repositories;
+
+namespace Microservices.Infra.UnityOfWok;
 public interface IUnityOfWork
 {
-    //IRepository<Entity> EntityRepository { get; }
+    IRepository<Recomendation> RecomendationRepository { get; set; }
 
     Task Commit();
     Task CommitTransactionAsync();
